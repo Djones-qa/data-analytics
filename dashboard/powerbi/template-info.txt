@@ -1,0 +1,4 @@
+Power BI Dashboard Template
+Name: Retail Operations Dashboard
+Author: Darrius Jones
+Description: Template for sales, inventory, and store performance analytics.
