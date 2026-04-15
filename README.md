@@ -1,5 +1,7 @@
 # Retail Operations & Sales Analytics Project
 
+![EDA Test](https://github.com/Djones-qa/data-analytics/actions/workflows/eda-test.yml/badge.svg)
+
 ## Overview
 This project demonstrates skills in:
 - Data cleaning and transformation
@@ -18,8 +20,8 @@ The dataset simulates:
 
 ## Project Structure
 data-analytics-project/
-¦   README.md
-¦   requirements.txt
+ï¿½   README.md
+ï¿½   requirements.txt
 +-- data/
 +-- notebooks/
 +-- scripts/
@@ -34,10 +36,10 @@ data-analytics-project/
 - Customer segments
 
 ## Insights Summary
-- Peak sales: 12–2 PM and 5–7 PM
+- Peak sales: 12ï¿½2 PM and 5ï¿½7 PM
 - Beverages have highest margin
 - Store #3 underperforms
-- Overstock can be reduced 12–18%
+- Overstock can be reduced 12ï¿½18%
 
 ## Dashboard Includes
 - Sales Overview

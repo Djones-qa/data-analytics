@@ -1,0 +1,48 @@
+name: EDA Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run EDA script
+        run: |
+          python -c "
+          import pandas as pd
+          import matplotlib
+          matplotlib.use('Agg')
+          import matplotlib.pyplot as plt
+          import seaborn as sns
+
+          df = pd.read_csv('data/sales.csv')
+          assert len(df) > 0, 'Dataframe is empty'
+          assert df.isnull().sum().sum() == 0, 'Missing values found'
+          assert 'total_amount' in df.columns, 'Missing total_amount column'
+          assert 'product_name' in df.columns, 'Missing product_name column'
+          assert 'date' in df.columns, 'Missing date column'
+
+          df['date'] = pd.to_datetime(df['date'])
+          sales_by_day = df.groupby(df['date'].dt.date)['total_amount'].sum()
+          assert len(sales_by_day) > 0, 'No sales data grouped by day'
+
+          top_products = df.groupby('product_name')['total_amount'].sum().sort_values(ascending=False).head(10)
+          assert len(top_products) > 0, 'No top products found'
+
+          print('All tests passed.')
+          "
