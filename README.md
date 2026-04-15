@@ -1,6 +1,6 @@
 # Retail Operations & Sales Analytics Project
 
-![EDA Test](https://github.com/Djones-qa/data-analytics/actions/workflows/eda-test.yml/badge.svg)
+![EDA Test](https://github.com/Djones-qa/data-analytics/actions/workflows/eda-test.yml/badge.svg?branch=main)
 
 ## Overview
 This project demonstrates skills in:
